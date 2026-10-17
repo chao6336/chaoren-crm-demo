@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#16231e">
+  <title>晁人活動 CRM</title>
+  <meta name="description" content="晁人文鼎協會活動與會員關係管理系統">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#dashboard" aria-label="回到儀表板"><span>晁人</span><strong>活動 CRM</strong></a>
+    <div class="userbox"><span id="modeBadge" class="badge">展示模式</span><span id="userLabel">louis趙・管理者</span></div>
+  </header>
+
+  <div class="shell">
+    <nav class="sidebar" aria-label="主要功能">
+      <a href="#dashboard" data-route="dashboard">總覽</a>
+      <a href="#events" data-route="events">活動</a>
+      <a href="#contacts" data-route="contacts">聯絡人</a>
+      <a href="#checkin" data-route="checkin">現場報到</a>
+      <a href="#messages" data-route="messages">LINE 訊息</a>
+      <a href="#governance" data-route="governance">資料治理</a>
+      <a href="#users" data-route="users">使用者</a>
+    </nav>
+    <main id="app" tabindex="-1"></main>
+  </div>
+
+  <dialog id="modal"><button type="button" class="dialog-close" data-action="close-modal" aria-label="關閉">×</button><div id="modalBody"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
